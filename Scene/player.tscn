@@ -1,11 +1,15 @@
 [gd_scene format=3 uid="uid://dp07sl4gefcbx"]
 
+[ext_resource type="Script" uid="uid://3esf8aauxqgf" path="res://Scripts/player.gd" id="1_kelma"]
+
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_j47wa"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_kelma"]
 
 [node name="Player" type="CharacterBody3D" unique_id=37601933]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9980302, 0)
+collision_layer = 2
+script = ExtResource("1_kelma")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1109609584]
 mesh = SubResource("CapsuleMesh_j47wa")
