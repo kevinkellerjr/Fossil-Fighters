@@ -4,8 +4,9 @@ const SPEED = 5.0
 
 func _physics_process(delta):
 	if not is_on_floor():
-		velocity += get_gravity() * delta
-		
+		#velocity += get_gravity() * delta
+		pass
+	
 	var input_dir := Input.get_vector("Player_Left", "Player_Right", "Player_Up", "Player_Down")
 	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:

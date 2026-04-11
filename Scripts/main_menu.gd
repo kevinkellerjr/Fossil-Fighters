@@ -1,19 +1,27 @@
 extends Control
 
-func _ready() -> void:
-	pass
+@onready var main_buttons: VBoxContainer = $MainButtons
+@onready var options: Panel = $Options
 
-func _process(delta):
-	pass
+
+func _ready() -> void:
+	main_buttons.visible = true
+	options.visible = false
+
 
 func _on_start_game_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scene/world.tscn")
-	print("Changed to world.tscn")
+	#print("Changed to world.tscn")
 
 
 func _on_options_pressed() -> void:
-	print("Options Pressed")
+	main_buttons.visible = false
+	options.visible = true
 
 
 func _on_exit_pressed() -> void:
 	get_tree().quit()
+
+
+func _on_back_pressed() -> void:
+	_ready()
